@@ -1,5 +1,24 @@
 
 const container1 = document.querySelector(".contenedor-1");
+const antes = document.querySelector(".antes"); 
+const siguiente = document.querySelector(".siguiente"); 
+
+let offset = 1;
+let limited = 8;
+
+antes.addEventListener("click", () => {
+
+if(offset != 1) {
+offset -=9; 
+buclePokemon(offset, limited); 
+}}); 
+
+siguiente.addEventListener("click", ()=> {
+  offset +=9; 
+ buclePokemon(offset, limited);
+})
+
+
 
 function getPokemon(id) {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
@@ -10,11 +29,26 @@ function getPokemon(id) {
     });
 }
 
-function buclePokemon(number) {
-  for (let i = 1; i <= number; i++) {
-    getPokemon(i);
+function buclePokemon(offset, limited) {
+const pokemonPromises = [];
+  
+for (let i = offset; i <= offset + limited; i++) {
+const promise = getPokemon(i);
+pokemonPromises.push(promise);
+    }
+  
+    Promise.all(pokemonPromises)
+      .then(pokemonData => {
+  
+        pokemonData.sort((a, b) => a.id - b.id);
+ 
+        pokemonData.forEach(pokemon => {
+          crearContenedorPokemon(pokemon);
+        });
+      })
+      .catch(error => console.error('Error al obtener datos de Pokémon:', error));
   }
-}
+  
 
 function crearContenedorPokemon(pokemon) {
   const card = document.createElement('div');
@@ -42,4 +76,4 @@ function crearContenedorPokemon(pokemon) {
   container1.appendChild(card);
 }
 
-buclePokemon(100);
+buclePokemon(offset,limited);
