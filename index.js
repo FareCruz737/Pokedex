@@ -1,113 +1,92 @@
 
-// const container1 = document.querySelector(".contenedor-1");
-// const antes = document.querySelector(".antes");
-// const siguiente = document.querySelector(".siguiente");
+const container1 = document.querySelector(".contenedor-1");
+const antes = document.querySelector(".antes");
+const siguiente = document.querySelector(".siguiente");
 
-// let offset = 1;
-// const limited = 8;
+let offset = 1;
+const limited = 11;
 
-// antes.addEventListener("click", () => {
-//   if (offset > 1) {
-//     offset -= 9;
-//     quitar(container1);
-//     buclePokemon(offset, limited);
-//   }
-// });
+antes.addEventListener("click", () => {
+  if (offset > 1) {
+    offset -= 9;
+    quitar(container1);
+    buclePokemon(offset, limited);
+  }
+});
 
-// siguiente.addEventListener("click", () => {
-//   offset += 9;
-//   quitar(container1);
-//   buclePokemon(offset, limited);
-// });
+siguiente.addEventListener("click", () => {
+  offset += 9;
+  quitar(container1);
+  buclePokemon(offset, limited);
+});
 
-// function getPokemon(id) {
-//   const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
-//   return fetch(url)
-//     .then(response => response.json())
-//     .then(data => {
-//       crearContenedorPokemon(data);
-//     });
-// }
-
-// function buclePokemon(offset, limited) {
-//   const pokemonPromises = [];
-
-//   for (let i = offset; i <= offset + limited; i++) {
-//     const promise = getPokemon(i);
-//     pokemonPromises.push(promise);
-//   }
-
-//   return Promise.all(pokemonPromises)
-//     .then(pokemonData => {
-//       pokemonData.sort((a, b) => a.id - b.id);
-//       pokemonData.forEach(pokemon => {
-//         crearContenedorPokemon(pokemon);
-//       });
-//     })
-//     .catch(error => console.error('Error al obtener datos de Pokémon:', error));
-// }
-
-// function crearContenedorPokemon(pokemon) {
-//   const card = document.createElement('div');
-//   card.classList.add("contenedor-1");
-
-//   const spriteContainer = document.createElement('div');
-//   spriteContainer.classList.add("contenedor-sprite");
-
-//   const sprite = document.createElement('img');
-//   sprite.src = pokemon.sprites.front_default;
-
-//   spriteContainer.appendChild(sprite);
-
-//   const numero = document.createElement('p');
-//   numero.textContent = `#${pokemon.id.toString().padStart(3, '0')}`;
-
-//   const nombre = document.createElement('p');
-//   nombre.classList.add("nombre-de-pokemon");
-//   nombre.textContent = pokemon.name;
-
-//   card.appendChild(spriteContainer);
-//   card.appendChild(numero);
-//   card.appendChild(nombre);
-
-//   container1.appendChild(card);
-// }
-
-// function quitar(remove) {
-//   while (remove.firstChild) {
-//     remove.removeChild(remove.firstChild);
-//   }
-// }
-
-// buclePokemon(offset, limited);
-
-
-
-
-
-
-
-const si = document.querySelector(".aver");
-
-function aver(id) {
+function getPokemon(id) {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
-
-  fetch(url)
+  return fetch(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data); // Puedes quitar esta línea si no necesitas imprimir en la consola
-      crear(data);
+      crearContenedorPokemon(data);
+    });
+}
+
+function buclePokemon(offset, limited) {
+  const pokemonPromises = [];
+
+  for (let i = offset; i <= offset + limited; i++) {
+    const promise = getPokemon(i);
+    pokemonPromises.push(promise);
+  }
+
+  return Promise.all(pokemonPromises)
+    .then(pokemonData => {
+      pokemonData.sort((a, b) => a.id - b.id);
+      pokemonData.forEach(pokemon => {
+        crearContenedorPokemon(pokemon);
+      });
     })
-   ;
+    .catch(error => console.error('Error al obtener datos de Pokémon:', error));
 }
 
-aver(9);
+function crearContenedorPokemon(pokemon) {
+  const card = document.createElement('div');
+  card.classList.add("contenedor-2");
 
-function crear(pokemon) {
-  const elementos = document.createElement('img');
-  elementos.classList.add("este-si");
-  elementos.src = typeData.sprites.front_default;
+  const spriteContainer = document.createElement('div');
+  spriteContainer.classList.add("contenedor-sprite");
 
-  si.appendChild(elementos);
+  const sprite = document.createElement('img');
+  sprite.src = pokemon.sprites.front_default;
+
+  spriteContainer.appendChild(sprite);
+
+  const numero = document.createElement('p');
+  numero.textContent = `#${pokemon.id.toString().padStart(3, '0')}`;
+
+  const nombre = document.createElement('p');
+  nombre.classList.add("nombre-de-pokemon");
+  nombre.textContent = pokemon.name;
+
+  card.appendChild(spriteContainer);
+  card.appendChild(numero);
+  card.appendChild(nombre);
+
+  container1.appendChild(card);
 }
+
+function quitar(remove) {
+  while (remove.firstChild) {
+    remove.removeChild(remove.firstChild);
+  }
+}
+
+buclePokemon(offset, limited);
+
+
+// \\\\\\\\\\
+
+
+
+
+
+
 
