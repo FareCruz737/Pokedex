@@ -1,0 +1,146 @@
+:root {
+--color-bug: #A8B820;
+--color-dark: #705848;
+--color-dragon: #7038F8;
+--color-electric: #F8D030;
+--color-fairy: #EE99AC;
+--color-fighting: #C03028;
+--color-fire: #F08030;
+--color-flying: #A890F0;
+--color-ghost: #705898;
+--color-grass: #78C850;
+--color-ground: #E0C068;
+--color-ice: #98D8D8;
+--color-normal: #A8A878;
+--color-poison: #A040A0;
+--color-psychic: #F85888;
+--color-rock: #B8A038;
+--color-steel: #B8B8D0;
+--color-water: #6890F0;
+}
+
+.bug { background-color: var(--color-bug); }
+.dark { background-color: var(--color-dark); }
+.dragon { background-color: var(--color-dragon); }
+.electric { background-color: var(--color-electric); }
+.fairy { background-color: var(--color-fairy); }
+.fighting { background-color: var(--color-fighting); }
+.fire { background-color: var(--color-fire); }
+.flying { background-color: var(--color-flying); }
+.ghost { background-color: var(--color-ghost); }
+.grass { background-color: var(--color-grass); }
+.ground { background-color: var(--color-ground); }
+.ice { background-color: var(--color-ice); }
+.normal { background-color: var(--color-normal); }
+.poison { background-color: var(--color-poison); }
+.psychic { background-color: var(--color-psychic); }
+.rock { background-color: var(--color-rock); }
+.steel { background-color: var(--color-steel); }
+.water { background-color: var(--color-water); }
+*{
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+}
+body{background-color:#eaf2f8  ;}
+.buttoncenter{
+display: flex;
+justify-content: center;
+align-items: center; 
+}
+#button{
+cursor: pointer;
+margin: 30px 0px;
+padding: 20px 50px; 
+border: none;
+border-radius: 20px;
+background-color:   #cd6155  ;
+
+font-size: 20px;
+font-weight: bolder;
+transition-duration: 0.3s;
+}
+#button:hover{
+padding: 30px 60px;
+background-color:   #17202a  ;
+color:  #f7dc6f;
+}
+.Cajaspokemons{
+background-color:   #fbfcfc  ;
+width: 250px;
+height: 330px;
+margin: 20px 25px;
+cursor: pointer;
+transition: 0.3s ease;
+border-radius: 20px;
+box-shadow: 0 0 2rem -1rem rgba(0,0,0,5)
+}
+.Cajaspokemons:hover {
+transform: scale(1.1);
+box-shadow: 0 0 2rem rgba(0,0,0,.25);
+transition: 0.2s;
+
+}
+.Cajaspokemons > img{
+height: 75px;
+margin: 55px;
+position: relative;
+left: 25px;
+}
+.Cajaspokemons > p{
+font-size: 25px;
+font-weight:400;
+text-align: center;
+}
+
+.tipos{
+width: 200px;
+padding: .15rem .2rem;
+margin: 10px 30px;
+border-radius: 20px;
+}
+#FatherBox{
+display: grid;
+grid-template-columns: repeat(3, 250px);
+gap: 20px;
+justify-content: center;
+}
+
+.Boxstats{
+display: grid;
+grid-template-columns: repeat(2,120px);
+justify-content: center;
+gap: 25px;
+}
+
+.BoxSt, .Boxnum{
+display: flex;
+flex-direction: column;
+width: 100px;
+margin: 30px;
+font-size: 25px;
+}
+
+.CajaSalida{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.CajaSalida > button{
+cursor: pointer;
+padding: 20px 20px; 
+border: none;
+border-radius: 20px;
+background-color:   #cd6155  ;
+
+font-size: 20px;
+font-weight: bolder;
+transition-duration: 0.3s;
+}
+
+
+.CajaSalida > button:hover{
+padding: 20px 35px;
+background-color:   #17202a  ;
+color:  #d4594b;
+}
