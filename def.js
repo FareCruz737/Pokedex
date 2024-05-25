@@ -3,7 +3,7 @@ var button = document.getElementById('button')
 
 
 
-let subir = 4; 
+let subir = 50; 
 let inicio = 1; 
 button.addEventListener('click', () => {
 recibirPokemons(inicio, subir)

@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 :root {
 --color-bug: #A8B820;
 --color-dark: #705848;
@@ -43,6 +45,66 @@ padding: 0%;
 box-sizing: border-box;
 }
 body{background-color:#eaf2f8  ;}
+
+header{
+display: grid;
+grid-template-columns: repeat(2, 600px);
+grid-template-rows: 200px;
+justify-content: end;
+box-shadow: 10px 1px  16px black;
+background-color: #2E4053;
+margin-bottom: 200px;
+
+}
+.cajaPokeball{
+width: auto;
+height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.Obtencion{
+width: 400px;
+display: flex;
+justify-content: start;
+align-items: center;
+}
+
+.Obtencion > h1{
+font-size: 55px;
+font-family: "Lato", sans-serif;
+font-weight: 900;
+font-style: italic;
+color: #C29C01;
+} 
+.Obtencion > img{
+height: 50px;  
+position: relative;
+left: 10px;
+top: 5px;
+}
+.cajaGrande{
+width: auto;
+height: auto;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+
+
+}
+#imgPokemons{
+display: flex;
+justify-content: flex-end;
+width: 400px;
+background-color: white;
+border-radius: 50% 0px 0px 50%;
+}
+#imgPokemons > img{
+width: 200px;
+margin: 0px 50px;
+}
+
+
 .buttoncenter{
 display: flex;
 justify-content: center;
