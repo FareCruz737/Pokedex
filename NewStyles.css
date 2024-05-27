@@ -47,9 +47,7 @@ box-sizing: border-box;
 body{background-color:#eaf2f8  ;}
 
 header{
-display: grid;
-grid-template-columns: repeat(2, 600px);
-grid-template-rows: 200px;
+display: flex;
 justify-content: end;
 box-shadow: 10px 1px  16px black;
 background-color: #2E4053;
@@ -57,8 +55,9 @@ margin-bottom: 200px;
 
 }
 .cajaPokeball{
-width: auto;
+width: 600px;
 height: auto;
+margin-right: 9rem ;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -206,3 +205,44 @@ padding: 20px 35px;
 background-color:   #17202a  ;
 color:  #d4594b;
 }
+
+/* Parte del acodamiento : para tables 892*/ 
+
+@media(max-width: 892px){
+   .cajaGrande{
+display: none;
+}
+header{
+height: 200px; 
+justify-content:center;
+align-items: center;
+}
+.cajaPokeball{
+margin-right: 40px;
+}
+.Obtencion{
+justify-content: center;
+align-items: center;
+margin: 0%;
+}
+#FatherBox{
+grid-template-columns: repeat(2,300px);
+}
+}
+
+
+/* Telefono: 634 */
+@media (max-width:634px){
+
+
+
+#FatherBox{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+    
+}
+
